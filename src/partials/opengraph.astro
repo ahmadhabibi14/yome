@@ -1,0 +1,24 @@
+---
+const {
+	og_title,
+	og_url,
+	og_image,
+} = Astro.props
+---
+
+<meta property="og:site_name" content={ og_title } />
+<meta property="og:title" content={ og_title } />
+<meta property="og:description" content="Listen your favorite Music on Yome" />
+<meta property='og:locale' content='id_ID' />
+<meta property='og:locale:alternate' content='ms_MY' />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={ og_url } />
+
+
+<meta property="og:image" content={ og_image } />
+<meta property="og:image:secure_url" content={ og_image } />
+
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={ og_title } />

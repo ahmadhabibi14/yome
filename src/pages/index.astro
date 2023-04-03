@@ -1,18 +1,9 @@
 ---
 import Button from "../components/button";
+import Base from "../layouts/base.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Yome</title>
-	</head>
-	<body>
-		<a href="/contact">contact</a>
-		<h1>YOme</h1>
-		<Button client:load></Button>
-	</body>
-</html>
+<Base title="Yome - My favorite audio" og_url="https://yome.vercel.app/" og_image="https://habibi2004.pages.dev/cover/default.png">
+	<h1>YOme</h1>
+	<Button client:load></Button>
+</Base>
