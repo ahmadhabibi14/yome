@@ -2,27 +2,23 @@
 import Navbar from "../partials/navbar.astro";
 import Footer from "../partials/footer.astro";
 import Opengraph from "../partials/opengraph.astro";
-const {
-   title,
-	og_url,
-	og_image,
-} = Astro.props
+const { title, og_url, og_image } = Astro.props
 ---
 
 <html lang="en">
    <head>
       <meta charset="utf-8" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="icon" type="image/svg+xml" href="/img/favicon/favicon.svg" />
       <meta name="viewport" content="width=device-width" />
       <meta name="generator" content={Astro.generator} />
       <title>{ title }</title>
       <Opengraph og_title={ title } og_url={ og_url } og_image={ og_image } />
    </head>
-	<body>
+	<body class="font-poppins">
 		<Navbar />
-		<article>
+		<main>
          <slot />
-      </article>
+      </main>
       <Footer />
 	</body>
 </html>
