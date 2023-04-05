@@ -14,9 +14,9 @@ const { title, og_url, og_image } = Astro.props
       <title>{ title }</title>
       <Opengraph og_title={ title } og_url={ og_url } og_image={ og_image } />
    </head>
-	<body class="font-poppins">
+	<body class="font-poppins bg-gray-950 text-gray-50">
 		<Navbar />
-		<main>
+		<main class="mt-20">
          <slot />
       </main>
       <Footer />
