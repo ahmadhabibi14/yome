@@ -1,4 +1,4 @@
-## Yome - Dope, cool, fantastic audio
+## Yome - Listen your fantastic audio
 
 ### How to start ?
 
