@@ -19,5 +19,6 @@ func init() {
 func main() {
 	r := gin.Default()
 	r.GET("/getAllSong", controller.GetAllSong)
+	r.POST("/addSong", controller.AddSong)
 	r.Run(":8080")
 }

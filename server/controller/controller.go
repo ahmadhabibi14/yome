@@ -29,3 +29,20 @@ func GetAllSong(c *gin.Context) {
 	c.Header("Content-Type", "application/json")
 	c.JSON(http.StatusOK, allSongs)
 }
+
+func AddSong(c *gin.Context) {
+	addSong := models.Music{}
+	if err := c.BindJSON(&addSong); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		return
+	}
+	dbase := db.Connect()
+	_, err := dbase.Exec(
+		"INSERT INTO `song`(`id`, `title`, `artist`, `album`, `track`) VALUES (?, ?, ?, ?, ?)",
+		addSong.Id, addSong.Title, addSong.Artist, addSong.Album, addSong.Track,
+	)
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	}
+	c.JSON(http.StatusOK, gin.H{"message": "Song added"})
+}
