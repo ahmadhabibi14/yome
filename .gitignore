@@ -1,3 +1,5 @@
+server/main
+
 # build output
 dist/
 # generated types

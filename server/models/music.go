@@ -5,5 +5,5 @@ type Music struct {
 	Title  string `json:"title"`
 	Artist string `json:"artist"`
 	Album  string `json:"album"`
-	Track  string `json:"track"`
+	Track  int    `json:"track"`
 }

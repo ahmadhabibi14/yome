@@ -43,6 +43,10 @@ func AddSong(c *gin.Context) {
 	)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		log.Println(err.Error())
 	}
+	c.Header("Access-Control-Allow-Origin", "*")
+	c.Header("Access-Control-Allow-Methods", "POST, OPTIONS")
+	c.Header("Content-Type", "application/json")
 	c.JSON(http.StatusOK, gin.H{"message": "Song added"})
 }

@@ -11,10 +11,10 @@ interface FormData {
 
 function AddSong() {
    const [formData, setFormData] = useState<FormData>({
-      id: '',
-      title: '',
-      artist: '',
-      album: '',
+      id: "",
+      title: "",
+      artist: "",
+      album: "",
       track: 0,
    });
    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -23,6 +23,8 @@ function AddSong() {
          const response = await axios.post("http://localhost:8080/addSong", formData, {
             headers: {
                "Content-Type": "application/json",
+               "Access-Control-Allow-Origin": "*",
+               "Access-Control-Allow-Methods": "POST, OPTIONS",
             },
          });
          console.log(response.data)
@@ -55,7 +57,7 @@ function AddSong() {
          </label>
          <label>
             track:
-            <input className="bg-gray-950" type="text" name="track" value={formData.track} onChange={handleInputChange} />
+            <input className="bg-gray-950" type="number" name="track" value={formData.track} onChange={handleInputChange} />
          </label>
          <button type="submit" className="bg-sky-500 py-1 px-3 rounded-xl">Submit</button>
       </form>
