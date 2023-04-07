@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 interface FormData {
    id: string;
@@ -19,18 +19,20 @@ function AddSong() {
    });
    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      try {
-         const response = await axios.post("http://localhost:8080/addSong", formData, {
-            headers: {
-               "Content-Type": "application/json",
-               "Access-Control-Allow-Origin": "*",
-               "Access-Control-Allow-Methods": "POST, OPTIONS",
-            },
-         });
-         console.log(response.data)
-      } catch (error) {
-         console.error(error);
-      }
+      fetch("http://localhost:8080/addSong", {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+            // "Origin": "http://127.0.0.1:3000",
+            "Access-Control-Request-Method": "POST",
+            "Access-Control-Request-Headers": "Content-Type",
+         },
+         body: JSON.stringify(formData),
+      }).then(response => {
+         console.log(response);
+      }).catch(error => {
+         console.error(error)
+      })
    };
    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const {name, value} = event.target;

@@ -3,7 +3,9 @@ package main
 import (
 	"log"
 	"yome-server/controller"
+	"yome-server/middleware"
 
+	// "github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
 )
@@ -17,8 +19,10 @@ func init() {
 }
 
 func main() {
-	r := gin.Default()
+	r := gin.New()
+	r.Use(middleware.CORSMiddleware())
 	r.GET("/getAllSong", controller.GetAllSong)
 	r.POST("/addSong", controller.AddSong)
+	r.Use(gin.Logger())
 	r.Run(":8080")
 }

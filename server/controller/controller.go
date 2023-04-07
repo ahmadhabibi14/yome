@@ -3,6 +3,7 @@ package controller
 import (
 	"log"
 	"net/http"
+	"strconv"
 	"yome-server/db"
 	"yome-server/models"
 
@@ -37,16 +38,21 @@ func AddSong(c *gin.Context) {
 		return
 	}
 	dbase := db.Connect()
-	_, err := dbase.Exec(
+	intNum, err := strconv.Atoi(addSong.Track)
+	if err != nil {
+		log.Printf("Eror :: %v\n", err)
+	}
+	_, err = dbase.Exec(
 		"INSERT INTO `song`(`id`, `title`, `artist`, `album`, `track`) VALUES (?, ?, ?, ?, ?)",
-		addSong.Id, addSong.Title, addSong.Artist, addSong.Album, addSong.Track,
+		addSong.Id, addSong.Title, addSong.Artist, addSong.Album, intNum,
 	)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		log.Println(err.Error())
 	}
-	c.Header("Access-Control-Allow-Origin", "*")
-	c.Header("Access-Control-Allow-Methods", "POST, OPTIONS")
-	c.Header("Content-Type", "application/json")
+	// c.Header("Access-Control-Allow-Origin", "http://127.0.0.1:3000")
+	// c.Header("Access-Control-Allow-Methods", "POST, OPTIONS")
+	// c.Header("Access-Control-Allow-Headers", "Origin, Content-Lenght, Authorization, access-control-allow-headers, content-type, Content-Type, Access-Control-Allow-Methods, access-control-allow-methods, Access-Control-Allow-Origin, access-control-allow-origin")
+	// c.Header("Content-Type", "application/json")
 	c.JSON(http.StatusOK, gin.H{"message": "Song added"})
 }
