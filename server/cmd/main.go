@@ -23,6 +23,7 @@ func main() {
 	r.Use(middleware.CORSMiddleware())
 	r.GET("/getAllSong", controller.GetAllSong)
 	r.POST("/addSong", controller.AddSong)
+	r.GET("/deleteSong", controller.DeleteSong)
 	r.Use(gin.Logger())
 	r.Run(":8080")
 }

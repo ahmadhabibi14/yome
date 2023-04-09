@@ -1,9 +1,15 @@
 ---
-import Button from "../components/button";
 import Base from "../layouts/base.astro";
+import SideHome from "../components/side_home";
 ---
 
 <Base title="Yome - Listen your fantastic audio" og_url="https://yome.vercel.app/" og_image="https://yome.vercel.app/img/cover/default.png">
-	<h1>Yome - Listen your fantastic audio</h1>
-	<Button client:load></Button>
+	<div class="flex flex-row space-x-4 w-full">
+		<section class="basis-[70%]">
+			<div>
+				<img class=" rounded-xl w-full h-auto" src="/img/components/banner.svg" alt="Banner" />
+			</div>
+		</section>
+		<SideHome />
+	</div>
 </Base>

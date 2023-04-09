@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 	"strconv"
@@ -50,9 +51,9 @@ func AddSong(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		log.Println(err.Error())
 	}
-	// c.Header("Access-Control-Allow-Origin", "http://127.0.0.1:3000")
-	// c.Header("Access-Control-Allow-Methods", "POST, OPTIONS")
-	// c.Header("Access-Control-Allow-Headers", "Origin, Content-Lenght, Authorization, access-control-allow-headers, content-type, Content-Type, Access-Control-Allow-Methods, access-control-allow-methods, Access-Control-Allow-Origin, access-control-allow-origin")
-	// c.Header("Content-Type", "application/json")
 	c.JSON(http.StatusOK, gin.H{"message": "Song added"})
+}
+
+func DeleteSong(c *gin.Context) {
+	fmt.Println("Delete song")
 }
