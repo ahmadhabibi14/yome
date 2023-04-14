@@ -1,7 +1,7 @@
 ---
-import Navbar from "../partials/navbar.astro";
-import Footer from "../partials/footer.astro";
-import Opengraph from "../partials/opengraph.astro";
+import Navbar from "@partials/react/navbar";
+import Footer from "@partials/astro/footer.astro";
+import Opengraph from "@partials/astro/opengraph.astro";
 const { title, og_url, og_image } = Astro.props
 import '../css/base.css';
 ---
@@ -16,7 +16,7 @@ import '../css/base.css';
       <Opengraph og_title={ title } og_url={ og_url } og_image={ og_image } />
    </head>
 	<body class="font-poppins bg-gray-950 text-gray-50">
-		<Navbar />
+		<Navbar client:only/>
 		<main class="mt-24 px-20 min-h-[80vh]">
          <slot />
       </main>
