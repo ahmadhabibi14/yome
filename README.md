@@ -152,7 +152,7 @@ ci/cd:
 - Get Access Token :
 ```bash
 curl -X POST "https://accounts.spotify.com/api/token" \
-     -H "Content-Type: application/x-www-form-urlencoded" \
-     -d "grant_type=client_credentials&client_id=your-client-id&client_secret=your-client-secret"
+      >  -H "Content-Type: application/x-www-form-urlencoded" \
+      >  -d "grant_type=client_credentials&client_id=78a4f4ce43c5466e8c26cb6c73f0cfb4&client_secret=c42c0521910d45c1bc1a094467a4614c"
 
 ```
