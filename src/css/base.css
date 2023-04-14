@@ -20,6 +20,13 @@ html::-webkit-scrollbar-thumb {
    border-radius: 2px;
 }
 
+.sidemenu {
+   @apply border border-gray-700 flex-col space-y-4 z-50 fixed top-20 !left-12 rounded-xl bg-gray-900 min-h-fit w-[220px] p-4;
+}
+.sidemenu_button {
+   @apply p-1.5 hover:bg-sky-400/10 hover:text-sky-500 rounded-xl cursor-pointer;
+}
+
 .navmenu {
    @apply h-full flex flex-col justify-end items-center space-y-2;
 }
