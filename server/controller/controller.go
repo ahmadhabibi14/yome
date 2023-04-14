@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 	"strconv"
-	"yome-server/db"
+	"yome-server/config"
 	"yome-server/models"
 
 	"github.com/gin-gonic/gin"
@@ -13,7 +13,7 @@ import (
 
 func GetAllSong(c *gin.Context) {
 	var allSongs []models.Music
-	dBase := db.Connect()
+	dBase := config.ConnectDB()
 	rows, err := dBase.Query("select * from song")
 	if err != nil {
 		log.Printf("Error Query to database :: %v\n", err.Error())
@@ -38,7 +38,7 @@ func AddSong(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	dbase := db.Connect()
+	dbase := config.ConnectDB()
 	intNum, err := strconv.Atoi(addSong.Track)
 	if err != nil {
 		log.Printf("Eror :: %v\n", err)
@@ -47,6 +47,7 @@ func AddSong(c *gin.Context) {
 		"INSERT INTO `song`(`id`, `title`, `artist`, `album`, `track`) VALUES (?, ?, ?, ?, ?)",
 		addSong.Id, addSong.Title, addSong.Artist, addSong.Album, intNum,
 	)
+	defer dbase.Close()
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		log.Println(err.Error())
