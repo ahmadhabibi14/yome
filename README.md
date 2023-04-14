@@ -147,6 +147,7 @@ ci/cd:
 - Update Handler in Backend
 
 ### Spotify API
+- API Documentation : `https://developer.spotify.com/`
 - Client ID `78a4f4ce43c5466e8c26cb6c73f0cfb4`
 - Client Secret `c42c0521910d45c1bc1a094467a4614c`
 - Get Access Token :
