@@ -7,7 +7,7 @@ const Navbar: FC = (): ReactElement => {
    const [openMenu, setOpenMenu] = useState(false);
 
    return (
-      <nav className="text-lg flex flex-row justify-between items-end px-20 bg-gray-900 z-50 fixed w-full top-0 inset-x-0">
+      <nav className="border-b border-gray-700 text-lg flex flex-row justify-between items-end px-20 bg-gray-900 z-50 fixed w-full top-0 inset-x-0">
          {/* Side Menu */}
          <SideMenu class={openMenu ? 'sidemenu flex' : 'sidemenu hidden'} />
          {/* Logo & Button */}
