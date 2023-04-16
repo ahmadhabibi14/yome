@@ -1,18 +1,16 @@
-import React, { useState } from "react";
-
-interface FormData {
-   username:   string;
-   password:   string;
-}
+import React, { useState, useRef } from "react";
 
 function Login() {
-   const [formData, setFormData] = useState<FormData>({
-      username: "",
-      password: "",
-   });
    const [showPass, setShowPass] = useState(false);
+   const userName: any = useRef(null);
+   const passWord: any = useRef(null);
+
    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
+      const formData = {
+         "username": userName.current.value,
+         "password": passWord.current.value,
+      }
       fetch("http://localhost:8080/auth/login", {
          method: "POST",
          headers: {
@@ -21,26 +19,29 @@ function Login() {
             "Access-Control-Request-Headers": "Content-Type",
          },
          body: JSON.stringify(formData),
-      }).then(response => {
-         console.log(response);
+      }).then(response => /*{
+         const sessionCookie = response.headers.get('Set-Cookie');
+         console.log(sessionCookie);
+      }*/ response.json()).then(data => {
+         console.log(data);
       }).catch(error => {
          console.error(error)
       })
    };
-   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const {name, value} = event.target;
-      setFormData((prevState) => ({ ...prevState, [name]: value}));
-   }
+   // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+   //    const {name, value} = event.target;
+   //    setFormData((prevState) => ({ ...prevState, [name]: value}));
+   // }
 
    return (
       <form className="flex flex-col space-y-6" onSubmit={handleSubmit}>
          <div className="flex flex-col space-y-4">
             <input className="border border-gray-700 focus:border-blue-500 caret-blue-500 rounded-xl py-2.5 px-4 outline-0 bg-gray-900" placeholder="Username" type="text" name="username"
-               autoComplete="off" value={formData.username} onChange={handleInputChange} />
+               autoComplete="off" ref={userName} />
             <div className="flex flex-row items-center w-full relative">
                <input className="grow bg-transparent border border-gray-700 focus:border-blue-500 caret-blue-500 rounded-xl py-2.5 px-4 outline-0" placeholder="Password"
-                  type={showPass ? 'text' : 'password'} name="password" autoComplete="off" value={formData.password} onChange={handleInputChange} />
-               <button title={!showPass? 'Show Password' : 'Hide password'} className="absolute right-0 top-0 p-3 h-full" onClick={() => setShowPass(!showPass)} >
+                  type={showPass ? 'text' : 'password'} name="password" autoComplete="off" ref={passWord} />
+               <button type="button" title={!showPass? 'Show Password' : 'Hide password'} className="absolute right-0 top-0 p-3 h-full" onClick={() => setShowPass(!showPass)} >
                   <svg viewBox="0 0 24 24" className={!showPass ? 'fill-gray-600 hover:fill-sky-500 w-[24px] h-auto block' : 'fill-gray-600 hover:fill-sky-500 w-[24px] h-auto hidden'}>
                      <path d="M11.9999 16.3299C9.60992 16.3299 7.66992 14.3899 7.66992 11.9999C7.66992 9.60992 9.60992 7.66992 11.9999 7.66992C14.3899 7.66992 16.3299 9.60992 16.3299 11.9999C16.3299 14.3899 14.3899 16.3299 11.9999 16.3299ZM11.9999 9.16992C10.4399 9.16992 9.16992 10.4399 9.16992 11.9999C9.16992 13.5599 10.4399 14.8299 11.9999 14.8299C13.5599 14.8299 14.8299 13.5599 14.8299 11.9999C14.8299 10.4399 13.5599 9.16992 11.9999 9.16992Z"/>
                      <path d="M12.0001 21.02C8.24008 21.02 4.69008 18.82 2.25008 15C1.19008 13.35 1.19008 10.66 2.25008 8.99998C4.70008 5.17998 8.25008 2.97998 12.0001 2.97998C15.7501 2.97998 19.3001 5.17998 21.7401 8.99998C22.8001 10.65 22.8001 13.34 21.7401 15C19.3001 18.82 15.7501 21.02 12.0001 21.02ZM12.0001 4.47998C8.77008 4.47998 5.68008 6.41998 3.52008 9.80998C2.77008 10.98 2.77008 13.02 3.52008 14.19C5.68008 17.58 8.77008 19.52 12.0001 19.52C15.2301 19.52 18.3201 17.58 20.4801 14.19C21.2301 13.02 21.2301 10.98 20.4801 9.80998C18.3201 6.41998 15.2301 4.47998 12.0001 4.47998Z"/>

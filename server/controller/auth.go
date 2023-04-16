@@ -66,7 +66,10 @@ func Login(c *gin.Context) {
 	session.Set("loggedIn", true)
 	session.Set("username", user.Username)
 	session.Save()
-	c.JSON(http.StatusOK, gin.H{"message": message})
+	c.JSON(http.StatusOK, gin.H{
+		"message": message,
+		"cookies": session,
+	})
 }
 
 func LoginCheck(username, password string) (string, error) {
