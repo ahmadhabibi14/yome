@@ -62,14 +62,15 @@ func Login(c *gin.Context) {
 	message, err := LoginCheck(input.Username, input.Password)
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid username or password"})
+	} else {
+		session.Set("loggedIn", true)
+		session.Set("username", user.Username)
+		session.Save()
+		c.JSON(http.StatusOK, gin.H{
+			"message": message,
+			"cookies": session,
+		})
 	}
-	session.Set("loggedIn", true)
-	session.Set("username", user.Username)
-	session.Save()
-	c.JSON(http.StatusOK, gin.H{
-		"message": message,
-		"cookies": session,
-	})
 }
 
 func LoginCheck(username, password string) (string, error) {

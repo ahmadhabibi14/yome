@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="accounts" ng-csp>
+  <head>
+    <meta charset="utf-8">
+    <title>Error - Spotify</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <base href="/">
+    <link rel="icon" href="https://accounts.scdn.co/oauth2/images/favicon.ace4d8543bbb017893402a1e9d1ac1fa.ico">
+    <link href="" media="screen" rel="stylesheet">
+  </head>
+  <body>
+  <div class="head">
+    <a class="spotify-logo" href="/" tabindex="-1" title="Spotify"></a>
+  </div>
+
+    <div class="container-fluid error">
+      <div class="content">
+        <h1 class="h1">Error</h1>
+        <p>
+          Oops! Something went wrong, please try again or check out our <a href="https://www.spotify.com/help">help area</a>.
+        </p>
+      </div>
+    </div>
+    <script async defer src="{2}" sp-error='{3}'></script>
+  </body>
+</html>

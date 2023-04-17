@@ -16,7 +16,7 @@ function Login() {
          headers: {
             "Content-Type": "application/json",
             "Access-Control-Request-Method": "POST",
-            "Access-Control-Request-Headers": "Content-Type",
+            "Access-Control-Request-Headers": "Content-Type, Cookie",
          },
          body: JSON.stringify(formData),
       }).then(response => /*{
@@ -58,7 +58,7 @@ function Login() {
             </div>
             <div className="text-sm px-3 text-gray-200 w-full flex flex-row justify-between">
                <label className="flex flex-row space-x-2">
-                  <input className="accent-sky-500" type="checkbox" name="remember_me" checked/>
+                  {/* <input className="accent-sky-500" type="checkbox" name="remember_me"/> */}
                   <p>Remember me</p>
                </label>
                <a href="/forgot-password" className="text-sky-500 hover:underline">Forgot password?</a>

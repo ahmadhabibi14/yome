@@ -1,6 +1,7 @@
 ---
 import Base from "@layouts/base.astro";
 import SideHome from "@components/react/side_home";
+import NewReleases from "@components/react/new_release";
 ---
 
 <Base title="Yome - Listen your fantastic audio" og_url="https://yome.vercel.app/" og_image="https://yome.vercel.app/img/cover/default.png">
@@ -11,5 +12,8 @@ import SideHome from "@components/react/side_home";
 			</div>
 		</section>
 		<SideHome />
+	</div>
+	<div class="mt-10 flex flex-col space-y-6">
+		<NewReleases client:only/>
 	</div>
 </Base>
