@@ -1,6 +1,7 @@
 ---
 import Base from "@layouts/base.astro";
 import Login from "@components/react/login_form";
+import { LoginModules } from "@/modules"
 ---
 <Base title="Login" og_url="https://yome.vercel.app/login" og_image="https://yome.vercel.app/img/cover/default.png">
    <div class="grid grid-cols-2 gap-[65px] px-28 pt-12">
@@ -10,7 +11,7 @@ import Login from "@components/react/login_form";
          <figcaption>Listening to music to keep your mood, find your fantastic audio</figcaption>
       </figure>
       <div class="basis-1/2 rounded-xl bg-gray-900 py-8 px-6 border border-gray-700">
-         <Login client:load />
+         <LoginModules client:load />
       </div>
    </div>
 </Base>
