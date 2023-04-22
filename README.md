@@ -1,5 +1,10 @@
 ## Yome - Listen your fantastic audio
 
+### TO-DO-LIST
+- [x] Fetch Spotify API
+- [ ] Generate refresh token in backend
+- [ ] etc.
+
 ### How to start ?
 Install dependencies
 ```pnpm install```
