@@ -1,4 +1,0 @@
-CREATE TABLE User (
-   Username VARCHAR(255) DEFAULT NULL,
-   Password VARCHAR(255) DEFAULT NULL
-);
