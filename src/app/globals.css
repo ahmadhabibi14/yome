@@ -2,26 +2,98 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+   /* Fonts */
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 100;
+      src: url("/fonts/Poppins/Thin.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 100;
+      src: url("/fonts/Poppins/ThinItalic.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 200;
+      src: url("/fonts/Poppins/ExtraLight.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 200;
+      src: url("/fonts/Poppins/ExtraLightItalic.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 300;
+      src: url("/fonts/Poppins/Light.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 300;
+      src: url("/fonts/Poppins/LightItalic.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 400;
+      src: url("/fonts/Poppins/Regular.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 500;
+      src: url("/fonts/Poppins/Medium.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 500;
+      src: url("/fonts/Poppins/MediumItalic.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 600;
+      src: url("/fonts/Poppins/SemiBold.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 600;
+      src: url("/fonts/Poppins/SemiBoldItalic.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 700;
+      src: url("/fonts/Poppins/Bold.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 700;
+      src: url("/fonts/Poppins/BoldItalic.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 800;
+      src: url("/fonts/Poppins/ExtraBold.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 800;
+      src: url("/fonts/Poppins/ExtraBoldItalic.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 900;
+      src: url("/fonts/Poppins/Black.ttf");
+   }
+   @font-face {
+      font-family: "Poppins";
+      font-weight: 900;
+      src: url("/fonts/Poppins/BlackItalic.ttf");
+   }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Navbar */
+.navbar {
+   @apply z-50 fixed h-16 w-full top-0 inset-x-0 lg:px-44
+      text-lg bg-gray-100 border-b border-gray-200
+      flex flex-row justify-between items-center;
 }
