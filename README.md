@@ -7,6 +7,9 @@
 - [ ] Music Video, embed from Youtube
 - [ ] etc.
 
+### Convert this UI Design into website
+[View on Figma](https://www.figma.com/file/EuvDqU2yJbOSIBJ72VD6GZ/Yome-UI-Design?type=design&node-id=0%3A1&t=wLcBl6WbgKL32LHY-1)
+
 ### How to start ?
 Install dependencies
 ```pnpm install```
