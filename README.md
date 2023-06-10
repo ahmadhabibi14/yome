@@ -3,6 +3,7 @@
 ### TO-DO-LIST
 - [x] Fetch Spotify API
 - [ ] Generate refresh token in backend
+- [ ] Music Video, embed from Youtube
 - [ ] etc.
 
 ### How to start ?
@@ -17,17 +18,15 @@ Build to production
 
 ### Tech Stack ?
 - Frontend library `React`
-- Programming language `TypeScript`
+- Programming language `JavaScript`
+- JavaScript Framework `Next.js`
 - CSS framework `Tailwind`
-- Build tool `Astro.build`
 - Icons library `Iconsax`
 - Package manager `pnpm`
 
 ### API Spec
 - Login, Register
 - Use Oauth for login with Google/Facebook
-- Upload Song, must be logged in first
-- Delete song
 - Music Playlist
 - Genre, sort by Genre
 - Spotify API
