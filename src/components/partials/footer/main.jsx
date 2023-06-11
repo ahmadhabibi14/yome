@@ -5,10 +5,10 @@ export default function Footer() {
    const year = new Date().getFullYear();
    return (
       <footer className="bg-gray-200 flex flex-col space-y-8 py-8 px-44">
-         <div className="w-full flex flex-row justify-between space-x-9 text-sm">
+         <div className="w-full flex flex-row justify-between space-x-14 text-sm">
             <div className="flex flex-col space-y-3 basis-5/12">
                <h5 className="font-semibold text-xl">Useful Links</h5>
-               <nav className="flex flex-col space-y-2">
+               <nav className="flex flex-col space-y-2 text-gray-700">
                   <Link className="hover:underline hover:text-sky-600" href="https://www.youtube.com/" target="_blank">Youtube Music</Link>
                   <Link className="hover:underline hover:text-sky-600" href="https://www.youtube.com/" target="_blank">Spotify</Link>
                   <Link className="hover:underline hover:text-sky-600" href="https://www.youtube.com/" target="_blank">Joox</Link>
@@ -17,7 +17,7 @@ export default function Footer() {
             </div>
             <div className="flex flex-col space-y-3 grow">
                <h5 className="font-semibold text-xl">About Us</h5>
-               <p>
+               <p className="text-gray-700">
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum animi, quam aspernatur rerum ad quibusdam, consequatur ea iusto aperiam exercitationem quo ab rem nesciunt dolores vitae similique sit nihil quod!
                </p>
                <Link href="/donate" className="py-2 px-4 bg-gradient-to-br from-yellow-500 to-amber-600 text-white flex flex-row space-x-3 w-fit rounded-xl shadow-lg drop-shadow-md">
@@ -34,11 +34,10 @@ export default function Footer() {
                </Link>
             </div>
             {/* Contact */}
-            <div className="flex flex-col space-y-3 basis-9/12">
+            <div className="flex flex-col space-y-3 basis-8/12">
                <h5 className="font-semibold text-xl">Contact</h5>
-               <p>Follow up our Social Media and get the latest updates</p>
-               <div className="flex flex-row space-x-4 items-center">
-
+               <p className="text-gray-700">Follow up our Social Media and get the latest updates</p>
+               <div className="flex flex-row space-x-4 items-center text-gray-700">
                   {/* Facebook */}
                   <Link href="https://www.facebook.com/" className="hover:text-blue-500">
                      <svg className="w-[20px] h-auto fill-current" viewBox="0 0 512 512">
@@ -90,7 +89,7 @@ export default function Footer() {
                </Link>
             </div>
          </div>
-         <div className="border-t border-gray-400 text-center pt-8 text-xs">
+         <div className="border-t border-gray-400 text-center pt-8 text-xs text-gray-700">
             <p>Copyright &copy; 2020 - {year}, <span className="text-sky-600">Yome.Inc</span> All Right Reserved. Made with Love and Powered by Vercel and Next.js</p>
          </div>
       </footer>

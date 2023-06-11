@@ -94,6 +94,6 @@
 /* Navbar */
 .navbar {
    @apply z-50 fixed h-16 w-full top-0 inset-x-0 lg:px-44 md:px-32 px-12
-      text-lg bg-gray-100 border-b border-gray-200
+      text-lg bg-gray-100 border-b border-gray-200 bg-opacity-80 backdrop-blur-md
       flex flex-row justify-between items-center;
 }
