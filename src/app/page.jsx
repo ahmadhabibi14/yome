@@ -1,3 +1,4 @@
+import Heading from "@/components/pages/home/heading";
 const currentTime = new Date().toISOString();
 
 export const metadata = {
@@ -22,8 +23,8 @@ export const metadata = {
 
 export default function Home() {
    return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-         Home
+      <main className="w-full mt-20">
+         <Heading />
       </main>
    )
 }
