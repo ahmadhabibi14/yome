@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
    const year = new Date().getFullYear();
    return (
-      <footer className="bg-gray-200 flex flex-col space-y-8 py-8 px-44">
+      <footer className="bg-gray-100 border-t border-gray-200 flex flex-col space-y-8 py-8 px-44 mt-10">
          <div className="w-full flex flex-row justify-between space-x-14 text-sm">
             <div className="flex flex-col space-y-3 basis-5/12">
                <h5 className="font-semibold text-xl">Useful Links</h5>
@@ -17,7 +17,7 @@ export default function Footer() {
             <div className="flex flex-col space-y-3 grow">
                <h5 className="font-semibold text-xl">About Us</h5>
                <p className="text-gray-700">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum animi, quam aspernatur rerum ad quibusdam, consequatur ea iusto aperiam exercitationem quo ab rem nesciunt dolores vitae similique sit nihil quod!
+                  Immerse yourself in the world of music with Yome! Discover the latest hits, trending tracks, and top charts across various genres. Download your favorite music for free, stay updated with music news, and elevate your music experience. Yome is your ultimate destination for all things music. Let the melodies guide you.
                </p>
                <Link href="/donate" className="py-2 px-4 bg-gradient-to-br from-yellow-500 to-amber-600 text-white flex flex-row space-x-3 w-fit rounded-xl shadow-lg drop-shadow-md">
                   <svg className="fill-current w-[20px] h-auto" viewBox="0 0 24 24">
@@ -35,7 +35,7 @@ export default function Footer() {
             {/* Contact */}
             <div className="flex flex-col space-y-3 basis-8/12">
                <h5 className="font-semibold text-xl">Contact</h5>
-               <p className="text-gray-700">Follow up our Social Media and get the latest updates</p>
+               <p className="text-gray-700">Stay updates by follow up our Social Media</p>
                <div className="flex flex-row space-x-4 items-center text-gray-700">
                   {/* Facebook */}
                   <Link href="https://www.facebook.com/" className="hover:text-blue-500">

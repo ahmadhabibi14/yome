@@ -3,20 +3,20 @@ import Link from "next/link";
 
 export default function Heading() {
    return (
-      <div className="flex flex-row space-x-8 items-start p-10">
+      <div className="flex flex-row space-x-8 items-start p-10 mb-10">
          <Image
                src="/img/components/disc_jockey_bro.svg"
                width={819}
                height={584}
                title="Disc Jockey Bro"
                alt="Hero"
-               className="absolute z-20 w-[650px] h-auto -mt-6 -ml-10"
+               className="absolute z-0 w-[650px] h-auto -mt-6 -ml-10"
             />
          <div className="w-[600px] h-auto"></div>
          <div className="grow flex flex-col mt-16">
             <small className="text-sky-600 font-medium">Yome - Listen your fantastic audio</small>
             <h1 className="mt-2 mb-3 text-5xl leading-[3.5rem] font-extrabold">Feel The Rhythm of Your Heart&apos;s Music</h1>
-            <Link href="/explore" className="flex flex-row space-x-2 py-2 px-4 rounded-xl bg-gradient-to-br from-sky-500 to-fuchsia-500 w-fit text-white text-lg">
+            <Link href="/explore" className="relative z-10 drop-shadow-lg cursor-pointer flex flex-row space-x-2 py-2 px-4 rounded-xl bg-gradient-to-br hover:from-sky-600 from-sky-500 hover:to-fuchsia-600 to-fuchsia-500 w-fit text-white text-lg">
                <span>Get Started</span>
                <svg className="fill-current w-[20px] h-auto" viewBox="0 0 24 24">
                   <path d="M5.58994 22.7001C3.24994 22.7001 1.26993 20.7201 1.26993 18.3801V12.22C1.20993 9.31003 2.29995 6.56005 4.31995 4.49005C6.33995 2.43005 9.05994 1.30005 11.9699 1.30005C17.9299 1.30005 22.7699 6.15005 22.7699 12.11V18.2701C22.7699 20.6501 20.83 22.5901 18.45 22.5901C16.07 22.5901 14.1299 20.6501 14.1299 18.2701V15.4601C14.1299 14.0301 15.2899 12.8701 16.7199 12.8701C18.1499 12.8701 19.3099 14.0301 19.3099 15.4601V18.4901C19.3099 18.9001 18.9699 19.2401 18.5599 19.2401C18.1499 19.2401 17.8099 18.9001 17.8099 18.4901V15.4601C17.8099 14.7801 17.2599 14.3701 16.7199 14.3701C16.0399 14.3701 15.6299 14.9201 15.6299 15.4601V18.2701C15.6299 19.8001 16.92 21.0901 18.45 21.0901C19.98 21.0901 21.2699 19.8001 21.2699 18.2701V12.11C21.2699 6.98005 17.0999 2.80005 11.9699 2.80005C9.45994 2.80005 7.12996 3.77004 5.38996 5.54004C3.64996 7.31004 2.71993 9.68007 2.76993 12.2001V18.3701C2.76993 19.9001 4.05994 21.1901 5.58994 21.1901C7.11994 21.1901 8.40994 19.9001 8.40994 18.3701V15.5601C8.40994 14.8801 7.85995 14.47 7.31995 14.47C6.63995 14.47 6.22995 15.0201 6.22995 15.5601V18.48C6.22995 18.89 5.88995 19.23 5.47995 19.23C5.06995 19.23 4.72995 18.89 4.72995 18.48V15.5601C4.72995 14.1101 5.86995 12.97 7.31995 12.97C8.74995 12.97 9.90994 14.1301 9.90994 15.5601V18.3701C9.90994 20.7601 7.96994 22.7001 5.58994 22.7001Z"/>
