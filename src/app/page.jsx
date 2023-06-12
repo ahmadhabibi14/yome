@@ -1,5 +1,7 @@
 import Heading from "@/components/pages/home/heading";
 import Section01 from "@/components/pages/home/section_01";
+import Section02 from "@/components/pages/home/section_02";
+import Section03 from "@/components/pages/home/section_03";
 const currentTime = new Date().toISOString();
 
 export const metadata = {
@@ -27,6 +29,8 @@ export default function Home() {
       <main className="w-full mt-20">
          <Heading />
          <Section01 />
+         <Section02 />
+         <Section03 />
       </main>
    )
 }
