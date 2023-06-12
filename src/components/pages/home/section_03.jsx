@@ -2,9 +2,9 @@ import Image from "next/image"
 
 export default function Section03() {
    return (
-      <section className="px-44 pt-10 my-20 flex flex-row justify-between items-center space-x-10">
+      <section className="px-44 pt-6 my-20 flex flex-row justify-between items-center space-x-10">
          <div className="basis-1/2 flex flex-col space-y-4">
-            <h2 className="font-bold text-2xl">Chuaaaaks Sundel</h2>
+            <h2 className="font-bold text-3xl">Tess 1 2 3</h2>
             <p>
                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero, natus fuga? Nostrum quisquam veritatis, dolor voluptatibus earum nemo molestias fugit vero itaque porro voluptate, consequatur sequi in eos dignissimos temporibus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus blanditiis beatae itaque tempore eligendi repudiandae maiores praesentium porro voluptatem ex qui temporibus, officia minus tempora vero reprehenderit nobis corporis dignissimos.
             </p>

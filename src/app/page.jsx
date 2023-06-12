@@ -29,8 +29,8 @@ export default function Home() {
       <main className="w-full mt-20">
          <Heading />
          <Section01 />
-         <Section02 />
          <Section03 />
+         <Section02 />
       </main>
    )
 }

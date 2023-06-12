@@ -4,8 +4,8 @@ export default function Footer() {
    const year = new Date().getFullYear();
    return (
       <footer className="bg-gray-100 border-t border-gray-200 flex flex-col space-y-8 py-8 px-44 mt-10">
-         <div className="w-full flex flex-row justify-between space-x-14 text-sm">
-            <div className="flex flex-col space-y-3 basis-5/12">
+         <div className="w-full flex flex-row justify-between text-sm">
+            <div className="flex flex-col space-y-3 w-44">
                <h5 className="font-semibold text-xl">Useful Links</h5>
                <nav className="flex flex-col space-y-2 text-gray-700">
                   <Link className="hover:underline hover:text-sky-600" href="https://www.youtube.com/" target="_blank">Youtube Music</Link>
@@ -14,7 +14,7 @@ export default function Footer() {
                   <Link className="hover:underline hover:text-sky-600" href="https://www.youtube.com/" target="_blank">Billboard</Link>
                </nav>
             </div>
-            <div className="flex flex-col space-y-3 grow">
+            <div className="flex flex-col space-y-3 w-5/12">
                <h5 className="font-semibold text-xl">About Us</h5>
                <p className="text-gray-700">
                   Immerse yourself in the world of music with Yome! Discover the latest hits, trending tracks, and top charts across various genres. Download your favorite music for free, stay updated with music news, and elevate your music experience. Yome is your ultimate destination for all things music. Let the melodies guide you.
@@ -33,7 +33,7 @@ export default function Footer() {
                </Link>
             </div>
             {/* Contact */}
-            <div className="flex flex-col space-y-3 basis-8/12">
+            <div className="flex flex-col space-y-3 w-52">
                <h5 className="font-semibold text-xl">Contact</h5>
                <p className="text-gray-700">Stay updates by follow up our Social Media</p>
                <div className="flex flex-row space-x-4 items-center text-gray-700">
