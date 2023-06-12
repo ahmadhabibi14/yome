@@ -22,12 +22,9 @@ export default function NewReleases() {
       });
    }, []);
 
+   // Error handling, if fetching data from Spotify fail, return this method
    if (isError) {
-      return (
-         <div>
-            Error....., Ini error kok
-         </div>
-      )
+      return (<div>Error....., Ini error kok</div>)
    }
 
    return (
