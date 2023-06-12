@@ -8,10 +8,10 @@ export default function Footer() {
             <div className="flex flex-col space-y-3 w-44">
                <h5 className="font-semibold text-xl">Useful Links</h5>
                <nav className="flex flex-col space-y-2 text-gray-700">
-                  <Link className="hover:underline hover:text-sky-600" href="https://www.youtube.com/" target="_blank">Youtube Music</Link>
-                  <Link className="hover:underline hover:text-sky-600" href="https://www.youtube.com/" target="_blank">Spotify</Link>
-                  <Link className="hover:underline hover:text-sky-600" href="https://www.youtube.com/" target="_blank">Joox</Link>
-                  <Link className="hover:underline hover:text-sky-600" href="https://www.youtube.com/" target="_blank">Billboard</Link>
+                  <Link className="hover:underline hover:text-sky-600 w-fit" href="https://www.youtube.com/" target="_blank">Youtube Music</Link>
+                  <Link className="hover:underline hover:text-sky-600 w-fit" href="https://www.youtube.com/" target="_blank">Spotify</Link>
+                  <Link className="hover:underline hover:text-sky-600 w-fit" href="https://www.youtube.com/" target="_blank">Joox</Link>
+                  <Link className="hover:underline hover:text-sky-600 w-fit" href="https://www.youtube.com/" target="_blank">Billboard</Link>
                </nav>
             </div>
             <div className="flex flex-col space-y-3 w-5/12">

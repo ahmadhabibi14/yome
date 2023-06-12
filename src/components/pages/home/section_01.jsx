@@ -35,14 +35,15 @@ export default function Section01() {
 
          <div className="relative overflow-hidden basis-[40%] h-32 text-sm py-4 px-6 bg-gradient-to-br from-[#2EBD59]/80 to-[#1ED760] border border-green-500 rounded-xl shadow-md cursor-pointer hover:shadow-xl hover:scale-95 duration-100">
             <div className="absolute ml-64 pl-3">
-            <Image
-               src="/img/components/spotify-3d.svg"
-               width={500}
-               height={500}
-               title="Spotify"
-               alt="Spotify"
-               className="w-auto h-[100px]"
-            /></div>
+               <Image
+                  src="/img/components/spotify-3d.svg"
+                  width={500}
+                  height={500}
+                  title="Spotify"
+                  alt="Spotify"
+                  className="w-auto h-[100px]"
+               />
+            </div>
             <div className="relative w-full flex flex-row">
                <div className="basis-8/12">
                <h4 className="text-xl font-semibold mb-1.5 flex flex-row space-x-2">

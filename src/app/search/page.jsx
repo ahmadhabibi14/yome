@@ -1,3 +1,4 @@
+import NewReleases from "@/components/pages/search/new_releases";
 const currentTime = new Date().toISOString();
 
 export const metadata = {
@@ -23,7 +24,7 @@ export const metadata = {
 export default function Search() {
    return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-         Search
+         <NewReleases />
       </main>
    )
 }
