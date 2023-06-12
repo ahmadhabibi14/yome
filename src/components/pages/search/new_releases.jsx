@@ -18,7 +18,7 @@ export default function NewReleases() {
          setNewReleases(responseData.album.items);
       }).catch(error => {
          setIsError(true);
-         console.error("Error : ", err);
+         console.error("Error : ", error);
       });
    }, []);
 
