@@ -1,3 +1,4 @@
+import Heading from "@/components/pages/top-charts/heading";
 const currentTime = new Date().toISOString();
 
 export const metadata = {
@@ -23,7 +24,7 @@ export const metadata = {
 export default function TopCharts() {
    return (
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
-         Top Charts
+         <Heading />
       </main>
    )
 }
