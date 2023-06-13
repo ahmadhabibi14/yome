@@ -21,7 +21,7 @@ export default function NewReleases() {
                const spotifyResp = await fetch(`https://api.spotify.com/v1/${endpoint}`, {
                   method: "GET",
                   headers: {
-                     Authorization: "Bearer BQCnyBzVRIHMr0Pn0Uoeq05H_IKn0n99VLCmo6CP61NuC5ahHywnXqZeMa9p_TxrlycL7pOT7nwu312bdSSH5fWksDE3fc-fxX8m5YmGP9uAt4wd9u4",
+                     Authorization: `Bearer ${accessToken}`,
                   }
                })
                const spotifyData = await spotifyResp.json()
