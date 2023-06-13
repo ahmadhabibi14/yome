@@ -4,51 +4,70 @@ import Image from "next/image";
 
 export default function NewReleases() {
    let [newReleases, setNewReleases] = useState([]);
+   const [accessToken, setAccessToken] = useState("");
    const [isError, setIsError] = useState(false);
+   const [loading, setLoading] = useState(false);
 
    useEffect(() => {
-      const accessToken = fetch("/api/spotify/access-token");
-      const endpoint = "browse/new-releases?limit=6";
-      fetch(`https://api.spotify.com/v1/${endpoint}`, {
-         method: "GET",
-         headers: {
-            Authorization: `Bearer ${accessToken}`,
+      setLoading(true);
+      const fetchData = async () => {
+         try {
+            const resp = await fetch("/api/spotify/access-token")
+            const data = await resp.json()
+            setAccessToken(data);
+
+            if (accessToken) {
+               const endpoint = "browse/new-releases?limit=12";
+               const spotifyResp = await fetch(`https://api.spotify.com/v1/${endpoint}`, {
+                  method: "GET",
+                  headers: {
+                     Authorization: "Bearer BQCnyBzVRIHMr0Pn0Uoeq05H_IKn0n99VLCmo6CP61NuC5ahHywnXqZeMa9p_TxrlycL7pOT7nwu312bdSSH5fWksDE3fc-fxX8m5YmGP9uAt4wd9u4",
+                  }
+               })
+               const spotifyData = await spotifyResp.json()
+               console.log(spotifyData)
+               setNewReleases(spotifyData.albums.items)
+            }
+         } catch {
+            setIsError(true)
          }
-      }).then(response => response.json()).then(responseData => {
-         setNewReleases(responseData.album.items);
-      }).catch(error => {
-         setIsError(true);
-         console.error("Error : ", error);
-      });
-   }, []);
+      }
+      fetchData();
+      setLoading(false);
+   }, [accessToken]);
 
    // Error handling, if fetching data from Spotify fail, return this method
    if (isError) {
       return (<div>Error....., Ini error kok</div>)
    }
 
-   return (
-      <div className="flex flex-col space-y-4">
-         <h2 className="text-2xl font-bold">
-            <span className="text-green-500"># </span>
-            New Releases
-         </h2>
-         <div className="w-full flex flex-row justify-between">
-            {newReleases.map(album => (
-               <a key={album.id} href={album.external_urls.spotify} className="w-[160px] p-3 rounded-xl bg-gray-900 hover:bg-gray-800 flex flex-col space-y-2">
-                  <Image
-                     src={album.images[1].url}
-                     width={400}
-                     height={400}
-                     title="Spotify"
-                     alt="Spotify"
-                     className="w-full h-auto" 
-                  />
-                  <p className="font-bold text-sm">{album.name}</p>
-                  <p className="text-xs text-gray-300">{album.artists[0].name}</p>
-               </a>
-            ))}
+   if (loading) {
+      return (<p>Loading....</p>)
+   } else {
+      return (
+         <div className="flex flex-col space-y-4 mt-6">
+            <h2 className="text-2xl font-bold">
+               <span className="text-green-500"># </span>
+               New Releases
+            </h2>
+            <div className="w-full grid grid-cols-6 grid-flow-row gap-4">
+               {newReleases.map(album => (
+                  <a key={album.id} href={album.external_urls.spotify}
+                     className="w-[150px] flex flex-col space-y-2 ">
+                     <Image
+                        src={album.images[0].url}
+                        width={600}
+                        height={600}
+                        title="Spotify"
+                        alt="Spotify"
+                        className="w-full h-auto rounded-lg shadow-md border border-gray-200"
+                     />
+                     <p className="font-bold text-sm">{album.name}</p>
+                     <p className="text-xs text-gray-700">{album.artists[0].name}</p>
+                  </a>
+               ))}
+            </div>
          </div>
-      </div>
-   );
+      )
+   }
 }
