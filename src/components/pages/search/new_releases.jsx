@@ -25,7 +25,6 @@ export default function NewReleases() {
                   }
                })
                const spotifyData = await spotifyResp.json()
-               console.log(spotifyData)
                setNewReleases(spotifyData.albums.items)
             }
          } catch {
@@ -53,7 +52,7 @@ export default function NewReleases() {
             <div className="w-full grid grid-cols-6 grid-flow-row gap-4">
                {newReleases.map(album => (
                   <a key={album.id} href={album.external_urls.spotify}
-                     className="w-[150px] flex flex-col space-y-2 ">
+                     className="w-[150px] flex flex-col space-y-2 hover:scale-95 duration-100">
                      <Image
                         src={album.images[0].url}
                         width={600}

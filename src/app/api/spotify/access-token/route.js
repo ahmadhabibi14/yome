@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 
 // Define client ID and client secret
-const client_id = "78a4f4ce43c5466e8c26cb6c73f0cfb4";
-const client_secret = "c42c0521910d45c1bc1a094467a4614c";
+const client_id = process.env.SPOTIFY_CLIENT_ID;
+const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
 const url = "https://accounts.spotify.com/api/token";
 
 export async function GET() {
