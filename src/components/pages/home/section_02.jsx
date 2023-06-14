@@ -10,7 +10,7 @@ export default function Section02() {
                height={282}
                title="Amazon"
                alt="Amazon"
-               className="w-auto h-[30px] grayscale cursor-pointer"
+               className="w-auto h-[30px] hover:grayscale cursor-pointer"
             />
          </div>
          
@@ -19,9 +19,9 @@ export default function Section02() {
                src="/icons/brands/youtube-music.svg"
                width={973}
                height={282}
-               title="youtube-music"
-               alt="youtube-music"
-               className="w-auto h-[30px] grayscale cursor-pointer"
+               title="YouTube Music"
+               alt="YouTube Music"
+               className="w-auto h-[30px] hover:grayscale cursor-pointer"
             />
          </div>
 
@@ -30,9 +30,9 @@ export default function Section02() {
                src="/icons/brands/spotify.svg"
                width={973}
                height={282}
-               title="spotify"
-               alt="spotify"
-               className="w-auto h-[30px] grayscale cursor-pointer"
+               title="Spotify"
+               alt="Spotify"
+               className="w-auto h-[30px] hover:grayscale cursor-pointer"
             />
          </div>
 
@@ -41,9 +41,9 @@ export default function Section02() {
                src="/icons/brands/tiktok.svg"
                width={973}
                height={282}
-               title="tiktok"
-               alt="tiktok"
-               className="w-auto h-[30px] grayscale cursor-pointer"
+               title="TikTok"
+               alt="TikTok"
+               className="w-auto h-[30px] hover:grayscale cursor-pointer"
             />
          </div>
 
@@ -52,9 +52,9 @@ export default function Section02() {
                src="/icons/brands/soundcloud.svg"
                width={973}
                height={282}
-               title="soundcloud"
-               alt="soundcloud"
-               className="w-auto h-[30px] grayscale cursor-pointer"
+               title="Soundcloud"
+               alt="Soundcloud"
+               className="w-auto h-[30px] hover:grayscale cursor-pointer"
             />
          </div>
 
@@ -63,9 +63,9 @@ export default function Section02() {
                src="/icons/brands/apple-music.svg"
                width={973}
                height={282}
-               title="apple-music"
-               alt="apple-music"
-               className="w-auto h-[30px] grayscale cursor-pointer"
+               title="Apple Music"
+               alt="Apple Music"
+               className="w-auto h-[30px] hover:grayscale cursor-pointer"
             />
          </div>
       </section>

@@ -5,6 +5,12 @@ import Footer from "@/components/partials/footer"
 import ErrorBoundary from "@/components/partials/error-boundary"
 import Error from "./error"
 
+export const metadata = {
+   icons: {
+      icon: "/favicons/favicon.svg"
+   }
+ }
+
 export default function RootLayout({ children }) {
    return (
       <html lang="en">
