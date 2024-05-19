@@ -1,3 +1,5 @@
+import AudioPlayer from "@/components/pages/home/audio";
+
 const currentTime = new Date().toISOString();
 
 export const metadata = {
@@ -22,8 +24,6 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <main className="w-full mt-20">
-      <h2>Hello</h2>
-    </main>
-  );
+    <AudioPlayer />
+  )
 }
