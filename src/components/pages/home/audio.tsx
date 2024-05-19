@@ -1,31 +1,30 @@
 "use client"
 import * as musicMetadata from "music-metadata-browser";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import Image from "next/image";
 
-const arrayBufferToBase64 = (buffer) => {
+const arrayBufferToBase64 = (buffer: Uint8Array): string => {
   let binary = '';
   const bytes = new Uint8Array(buffer);
-  const len = bytes.byteLength;
-  for (let i = 0; i < len; i++) {
+  for (let i in bytes) {
     binary += String.fromCharCode(bytes[i]);
   }
   return window.btoa(binary);
 };
 
-function AudioPlayer() {
-  const [audio, setAudio] = useState(null);
-  const [albumCover, setAlbumCover] = useState(null);
+const AudioPlayer: React.FC = () => {
+  const [audio, setAudio] = useState<string>("");
+  const [albumCover, setAlbumCover] = useState<string>("");
 
-  const handleAudioChange = (event) => {
-    const audioFile = event.target.files[0];
+  const handleAudioChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const audioFile: File = event.target.files?.[0] as File;
     if (audioFile) {
       setAudio(URL.createObjectURL(audioFile));
-      const metadata = musicMetadata.parseBlob(audioFile).then(metadata => {
+      const metadata: Promise<any> = musicMetadata.parseBlob(audioFile).then(metadata => {
         console.log(metadata);
         const picture = metadata.common.picture ? metadata.common.picture[0] : null;
         if (picture) {
-          const base64String = arrayBufferToBase64(picture.data);
+          const base64String: string = arrayBufferToBase64(picture.data as Uint8Array);
           setAlbumCover(`data:${picture.format};base64,${base64String}`);
         }
       })
